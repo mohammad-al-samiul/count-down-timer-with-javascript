@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="flex justify-center items-center w-full h-screen">
+      <div>
+        <h1 class="text-6xl font-bold text-blue-400">Count Down Timer</h1>
+        <div class="flex mt-20 gap-4">
+          <div>
+            <h3 class="text-3xl font-bold">Hours</h3>
+            <input
+              maxlength="2"
+              class="hour text-5xl w-[200px]"
+              oninput="this.value = this.value.slice(0, this.maxLength)"
+              type="number"
+              name=""
+              id=""
+              placeholder="00"
+            />
+          </div>
+          <div>
+            <h3 class="text-3xl font-bold">Minutes</h3>
+            <input
+              class="minute text-5xl w-[200px]"
+              type="number"
+              maxlength="2"
+              oninput="this.value = this.value.slice(0, this.maxLength)"
+              name=""
+              id=""
+              placeholder="00"
+            />
+          </div>
+          <div>
+            <h3 class="text-3xl font-bold">Seconds</h3>
+            <input
+              class="second text-5xl w-[200px]"
+              type="number"
+              maxlength="2"
+              oninput="this.value = this.value.slice(0, this.maxLength)"
+              name=""
+              id=""
+              placeholder="00"
+            />
+          </div>
+        </div>
+        <div class="flex gap-5 mt-10">
+          <div>
+            <button
+              class="start text-2xl text-white bg-orange-400 px-6 py-2 rounded"
+            >
+              Start
+            </button>
+          </div>
+          <div>
+            <button
+              class="stop hidden text-2xl text-white bg-gray-400 px-6 py-2 rounded"
+            >
+              Stop
+            </button>
+          </div>
+          <div>
+            <button
+              class="reset text-2xl text-white bg-red-500 px-6 py-2 rounded"
+            >
+              Reset
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+    <script src="script.js"></script>
+  </body>
+</html>

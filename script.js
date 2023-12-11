@@ -26,7 +26,14 @@
     startInterval();
   });
 
-  function stopInterval() {}
+  function stopInterval(state) {
+    startBtn.innerHTML = state === 'pause' ? 'Continue' : "Start";
+    
+    startBtn.style.display = "initial";
+    stopBtn.style.display = "none";
+
+    clearInterval(countDownTimer);
+  }
 
   function timer() {
     if(sec.value > 60){
@@ -55,7 +62,15 @@
   }
 
   stopBtn.addEventListener("click", function () {
-    stopBtn.style.display = "none";
-    startBtn.style.display = "block";
+    stopInterval('pause')
   });
+
+  resetBtn.addEventListener("click", function(){
+    hour.value = "";
+    min.value = "";
+    sec.value = "";
+
+    stopInterval();
+  })
+
 })();
